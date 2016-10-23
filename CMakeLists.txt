@@ -38,7 +38,7 @@ find_package(Qt5 REQUIRED COMPONENTS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(src)
-add_subdirectory(atcore)
+add_subdirectory(atcore/src)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
