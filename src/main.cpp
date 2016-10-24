@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
         stream << "Connecting to:" <<device <<" baud:" << baud <<endl;
         kiln->setDevice(device, baud);
     } else {
-        stream << "A Device is Required"<< endl; return 0;
+        stream << "A Device is Required"<< endl;
     }
 
     if(!fileName.isEmpty()) {
