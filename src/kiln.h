@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QTextStream>
 #include "../atcore/src/atcore.h"
 
 
@@ -13,7 +14,7 @@ public:
     void setDevice(const QString &device, int baud);
     void printFile(const QString &fileName);
 public slots:
-
+    void printProgressChanged(const float &newProgress);
 signals:
     /**
      * @brief print : finished kill the program.
