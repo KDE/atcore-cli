@@ -30,12 +30,21 @@ int main(int argc, char *argv[])
     if (!device.isEmpty()) {
         stream << "Connecting to:" <<device <<" baud:" << baud <<endl;
         kiln->setDevice(device, baud);
+        bool waiting = true;
+        while(waiting){
+        stream << "Waiting" << endl;
+            if(kiln->state() == IDLE){
+                waiting = false;
+            }
+        }
+
     } else {
         stream << "A Device is Required"<< endl;
     }
 
     if(!fileName.isEmpty()) {
-        kiln->print(fileName);
+        kiln->printFile(fileName);
     }
+
     return app.exec();
 }
