@@ -13,6 +13,7 @@ public:
     ~Kiln();
     void setDevice(const QString &device, int baud);
     void printFile(const QString &fileName);
+    PrinterState state();
 public slots:
     void printProgressChanged(const float &newProgress);
 signals:

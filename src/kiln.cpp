@@ -4,7 +4,7 @@ Kiln::Kiln(QObject *parent) :
     QObject(parent),
     core(new AtCore(this))
 {
-    connect(this,SIGNAL(done()), this->parent(), SLOT(quit()));
+    //connect(this,SIGNAL(done()), this->parent(), SLOT(quit()));
     connect(this, &Kiln::print, core, &AtCore::print);
     connect(core, &AtCore::printProgressChanged, this, &Kiln::printProgressChanged);
 }
@@ -23,8 +23,15 @@ void Kiln::printProgressChanged(const float &newProgress)
 
 void Kiln::printFile(const QString &fileName)
 {
+    QTextStream(stdout) << "Printing:" << fileName << endl;
     emit(print(fileName));
 }
+
+PrinterState Kiln::state()
+{
+    return core->state();
+}
+
 Kiln::~Kiln()
 {
 
