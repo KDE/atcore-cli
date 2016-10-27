@@ -1,12 +1,18 @@
- Klin is a cli interface for Atcore. 
+ Klin is a console interface for Atcore. 
  
- example command :> kiln -d /dev/ttyUSB0 -b 115200 -p file.gcode 
+ usage :> kiln -d /dev/ttyUSB0 -p ~/file.gcode 
  
- example output: 
- Attemping to connect : <device> baud: <speed> 
- Detected Firmware: <plugin loaded>
- Printing: fileName |  [++++===============] 20%
+ switches: 
+
+ -d <device>
+    the device to connect to
+
+ -b <baud> 
+    baud to use; optional default baud is 112500
  
-  Todo: 
- 
-  everything.
+ -p <gcode>
+    gcode file to print. 
+    
+ todo: 
+    + firmware switch to skip detect of fimware
+    + handle Stop better then killing kiln with ctrl+C
