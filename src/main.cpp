@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
         kiln->setDevice(device, baud);
         bool waiting = true;
         while(waiting){
+        QCoreApplication::processEvents();
         stream << "Waiting" << endl;
             if(kiln->state() == IDLE){
                 waiting = false;
@@ -45,6 +46,4 @@ int main(int argc, char *argv[])
     if(!fileName.isEmpty()) {
         kiln->printFile(fileName);
     }
-
-    return app.exec();
 }
