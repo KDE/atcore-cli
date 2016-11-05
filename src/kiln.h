@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include <QTextStream>
-#include "../atcore/src/atcore.h"
+#include <KAtCore/AtCore>
 
 
 class Kiln : public QObject
