@@ -13,7 +13,7 @@ Kiln::Kiln(QObject *parent) :
 void Kiln::setDevice(const QString &device, int baud)
 {
     addLog(QStringLiteral("Connecting To:%1 baud:%2").arg(device,QString::number(baud)));
-    core->initFirmware(device,baud);
+    core->initSerial(device,baud);
     connect(core->serial(), &SerialLayer::receivedCommand, this, &Kiln::checkReceivedCommand);
     connect(core->serial(), &SerialLayer::pushedCommand, this, &Kiln::checkPushedCommands);
 }
